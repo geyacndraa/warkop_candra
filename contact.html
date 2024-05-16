@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warkop Candra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label, input, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .text-white {
+            color: white;
+        }
+        .whatsapp-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .whatsapp-icon {
+            height: 1em;
+            width: auto;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .contact-person-text {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-white">Contact Us</h2>
+        <p class="text-white">Alamat: Jalan Raya Surabaya - Madiun No.KM, RW.25, Sidorejo, Kec. Krian, Kabupaten Sidoarjo, Jawa Timur 61262</p>
+        <p class="text-white">Telepon: 0821-4105-5207</p>
+        <p class="text-white">Email: geyacandra123@gmail.com</p>
+        <p class="text-white">Jam Operasional: Senin - Minggu, 24 Jam</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d449.5527679332555!2d112.61624118901186!3d-7.382747037211392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7809ef8d2eeaff%3A0x96a385a463426890!2sWarkop%20Candra2!5e0!3m2!1sid!2sid!4v1715874898374!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <h2 class="text-white">Contact Us via WhatsApp</h2>
+        <div class="whatsapp-container">
+            <a href="https://wa.me/6282141055207" target="_blank">
+                <img src="whatsapp_icon.png" alt="WhatsApp" class="whatsapp-icon">
+            </a>
+            <span class="contact-person-text">Contact Person 1</span>
+        </div>
+        <div class="whatsapp-container">
+            <a href="https://wa.me/6282141055207" target="_blank">
+                <img src="whatsapp_icon.png" alt="WhatsApp" class="whatsapp-icon">
+            </a>
+            <span class="contact-person-text">Contact Person 2</span>
+        </div>
+
+        <h2 class="text-white">Kritik dan Saran</h2>
+        <form id="feedback-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="button" value="Submit" onclick="sendFeedback()">
+        </form>
+    </div>
+
+    <script>
+        function sendFeedback() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            var phoneNumber = '6282141055207'; // Nomor WhatsApp Anda dalam format internasional tanpa tanda +
+            var text = `Name: ${name}\nMessage: ${message}`;
+
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
